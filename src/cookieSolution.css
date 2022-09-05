@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  label {
+    @apply font-bold pl-2
+  }
+  button {
+    @apply font-bold py-2 px-4 rounded-full border-2 m-2
+  
+  }
+  p {
+    @apply py-2
+  }
+}
+
+@layer components {
+  [name="buttonAccept"]{
+    @apply bg-primary border-primary hover:bg-white text-white hover:text-primary transition-all
+  }
+}
+
+@layer utilities {
+  [id^='cookie-solution-banner']{
+    @apply flex-row fixed bottom-0 left-0 right-0 z-50 gap-8 justify-between items-start py-3 px-4 w-full bg-gray-50 border border-b border-gray-200 sm:items-center lg:py-4
+  }
+  [data-cookie-solution]{
+    @apply p-2 mb-2 w-full lg:w-1/2 
+  }
+  [data-cookie-solution-state="waiting"]{
+    @apply bg-white text-black
+  }
+  [data-cookie-solution-state="enabled"]{
+    @apply bg-enabled text-white
+  }
+  [data-cookie-solution-state="disabled"]{
+    @apply bg-disabled text-white
+  }
+  [id^='cookie-solution-button']{
+    @apply fixed bottom-0 right-0 z-50
+  }
+}
